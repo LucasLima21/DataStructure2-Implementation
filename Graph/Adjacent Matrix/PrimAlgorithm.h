@@ -7,7 +7,7 @@ template<typename Type>
 class PrimMST{
 private:
   Graph<Type> * g;
-  int * key, * minimumPriorityArray, * prevVertexArray;
+  int * key, * prevVertexArray;
   bool * checkVertex;
   int extractMin(int *, bool *);
   void mstPrim(Graph<Type> *, int);
@@ -22,7 +22,6 @@ PrimMST<Type>::PrimMST(Graph<Type> * g, int source){
   this->g = g;
   key = new int[g->getOrder()+1];
   prevVertexArray = new int[g->getOrder()+1];
-  minimumPriorityArray = new int[g->getOrder()+1];
   checkVertex = new bool[g->getOrder()+1];
   mstPrim(g,source);
 }
